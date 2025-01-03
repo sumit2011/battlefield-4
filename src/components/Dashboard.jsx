@@ -65,7 +65,7 @@ const Dashboard = () => {
       <BackgroundImage />
       <Sidebar/>
       <MainContent>
-        <Navbar> &lt; MULTIPLAYER &nbsp; / &nbsp; SERVER BROWSER &nbsp;  / </Navbar>
+        <Navbar> &lt;&nbsp; MULTIPLAYER &nbsp; / &nbsp; SERVER BROWSER &nbsp;  / </Navbar>
         <Title>SERVER INFO</Title>
         <br/> <br/> <br/>
         <ServerInfo />

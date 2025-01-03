@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const SidebarContainer = styled.div`
-  width: ${({ isExpanded }) => (isExpanded ? "250px" : "80px")};
+  width: ${({ isExpanded }) => (isExpanded ? "250px" : "70px")};
   background: ${({ isExpanded }) => isExpanded ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0)"};
   color: #fff;
   display: flex;
@@ -11,7 +11,7 @@ const SidebarContainer = styled.div`
   height: 100vh;
   position: fixed;
   right: 0; 
-  padding-top: 20px;
+  padding-top: 15px;
   transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
   font-family: 'Rajdhani', sans-serif;
 `;
