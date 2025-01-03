@@ -89,6 +89,7 @@ const MapRotation = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   row-gap: 15px; 
   column-gap: 50px; 
+  padding-bottom: 20px;
 `;
 
 const MapCard = styled.div`
@@ -113,7 +114,8 @@ const MapCard = styled.div`
 
 const MapImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: 50%;
+  margin-bottom: 30%;
   object-fit: cover;
   transition: transform 0.3s ease;
 
@@ -128,17 +130,24 @@ const MapName = styled.span`
   left: 0;
   width: 100%;
   height: 50%;
-  background: rgba(0, 0, 0, 0.9); 
-  color: #ccc; 
-  font-size: 14px;
-  font-weight: bold;
-  padding: 5px 0;
+  background: rgba(0, 0, 0, 0.8); 
+  color: #fff; 
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
   transition: color 0.3s ease, background 0.3s ease;
 
   &:hover {
     color: black; 
     background: white; 
   }
+`;
+
+const Name = styled.div`
+ width: 55%;
+ text-align: left;
+ padding: 10px;
+ text-transform: uppercase;
 `;
 
 const Buttons = styled.div`
@@ -204,29 +213,39 @@ const InfoTitle = styled.div`
   height: 2.5vh;
 `;
 
+
+
 const ServerInfo = () => {
   const maps = [
-    { name: "Conquest Large Dawnbreaker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Operation Locker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Dawnbreaker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Operation Locker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Dawnbreaker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
-    { name: "Conquest Large Operation Locker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
+    { name: "Conquest Large Dawnbreaker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076de23d2b9d4e1fbf67_browser__SI-next-image%20-%2006.png" },
+    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076c1ab31e3d009e691e_browser__SI-next-image%20-%2002.png" },
+    { name: "Conquest Large Operation Locker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d9b48792dbe261e07_browser__SI-next-image%20-%2004.png" },
+    { name: "Conquest Large Lancang dam", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
+    { name: "Conquest Large siege of shanghai", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076cab09f17a68176928_browser__SI-next-image%20-%2001.png" },
+    { name: "Conquest Large golmud railway", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d00244d9e5298944f_browser__SI-next-image%20-%2003.png" },
+    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076c1ab31e3d009e691e_browser__SI-next-image%20-%2002.png" },
+    { name: "Conquest Large siege of shanghai", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076cab09f17a68176928_browser__SI-next-image%20-%2001.png" },
+    { name: "Conquest Large Dawnbreaker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076de23d2b9d4e1fbf67_browser__SI-next-image%20-%2006.png" },
+    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076c1ab31e3d009e691e_browser__SI-next-image%20-%2002.png" },
+    { name: "Conquest Large Operation Locker", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d9b48792dbe261e07_browser__SI-next-image%20-%2004.png" },
+    { name: "Conquest Large Lancang dam", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d8123214d0747f2a1_browser__SI-next-image%20-%2005.png" },
+    { name: "Conquest Large siege of shanghai", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076cab09f17a68176928_browser__SI-next-image%20-%2001.png" },
+    { name: "Conquest Large golmud railway", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076d00244d9e5298944f_browser__SI-next-image%20-%2003.png" },
+    { name: "Conquest Large Propaganda", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076c1ab31e3d009e691e_browser__SI-next-image%20-%2002.png" },
+    { name: "Conquest Large siege of shanghai", img: "https://cdn.prod.website-files.com/6013fff62154adaa4600f932/6039076cab09f17a68176928_browser__SI-next-image%20-%2001.png" },
+
   ];
 
   return (
     <ServerInfoContainer>
       <ServerName>! RC3-BASEMAPS</ServerName>
-      <p>🇺🇲 CONQUEST LARGE - LANCING DAM - CUSTOM - 60 HZ<br/>
-      Server protected by The_K-50 AntiCheat. Vip !Rules, Questions, Request, Appeal, Visit us: www.epg.gg | Discord <br/> https://discord.gg/3r5NK4d</p>
+      <p>🇺🇲 CONQUEST LARGE - LANCING DAM - CUSTOM - 60 HZ<br />
+        Server protected by The_K-50 AntiCheat. Vip !Rules, Questions, Request, Appeal, Visit us: www.epg.gg | Discord <br /> https://discord.gg/3r5NK4d</p>
       <Buttons>
         <Button>Join</Button>
         <Button>Spectate</Button>
         <Button>Join as Commander</Button>
-        <StarButton>* 13672</StarButton>
+        <StarButton>★ 13672</StarButton>
       </Buttons>
       <InfoGrid>
         <Info>
@@ -246,30 +265,50 @@ const ServerInfo = () => {
         <Section>
           <SectionTitle>Settings</SectionTitle>
           <DetailsGrid>
-            <Detail>Region:<Status>Europe - DE</Status></Detail>
-            <Detail>PunkBuster:<div>ON</div></Detail>
-            <Detail>FairFight:<div>ON</div></Detail>
-            <Detail>Password:<div>OFF</div></Detail>
-            <Detail>Preset:<div>Normal</div></Detail>
+            <Detail>Region<Status>Europe - DE</Status></Detail>
+            <Detail>PunkBuster<div>ON</div></Detail>
+            <Detail>FairFight<div>ON</div></Detail>
+            <Detail>Password<div>OFF</div></Detail>
+            <Detail>Preset<div>Normal</div></Detail>
           </DetailsGrid>
         </Section>
         <Section>
+
+
+
           <SectionTitle>Advanced</SectionTitle>
           <DetailsGrid>
-            <Detail>Tickets:<div>400</div></Detail>
-            <Detail>Vehicle Spawn Delay:<div>25</div></Detail>
-            <Detail>Bullet Damage:<div>100</div></Detail>
-            <Detail>Kick After Team Kills:<div>5</div></Detail>
+            <Detail>minimap<div>on</div></Detail>
+            <Detail>only squad leader spawn<div>off</div></Detail>
+            <Detail>vehicles<div>on</div></Detail>
+            <Detail>team balance<div>on</div></Detail>
+            <Detail>minimap spotting<div>on</div></Detail>
+            <Detail>hud<div>on</div></Detail>
+            <Detail>3p vehicle cam<div>on</div></Detail>
+            <Detail>regenerative health<div>on</div></Detail>
+            <Detail>kill cam<div>on</div></Detail>
+            <Detail>friendly fire<div>off</div></Detail>
+            <Detail>3d spotting<div>on</div></Detail>
+            <Detail>enemy name tags<div>on</div></Detail>
           </DetailsGrid>
+
+
         </Section>
         <Section>
           <SectionTitle>Rules</SectionTitle>
           <DetailsGrid>
-            <Detail>Region:<Status>Europe - DE</Status></Detail>
-            <Detail>PunkBuster:<div>ON</div></Detail>
-            <Detail>FairFight:<div>ON</div></Detail>
-            <Detail>Password:<div>OFF</div></Detail>
-            <Detail>Preset:<div>Normal</div></Detail>
+            <Detail>
+              tickets<Status style={{ color: "yellow" }}>400</Status>
+            </Detail>
+            <Detail>
+              vehicle spawn delay<div style={{ color: "yellow" }}>25</div>
+            </Detail>
+            <Detail>bullet damage<div>100</div></Detail>
+            <Detail>kick after team kills<div>5</div></Detail>
+            <Detail>player health<div>100</div></Detail>
+            <Detail>player respawn time<div>100</div></Detail>
+            <Detail>kick after idle<div>300</div></Detail>
+            <Detail>ban after kicks<div>3</div></Detail>
           </DetailsGrid>
         </Section>
       </Container>
@@ -279,7 +318,8 @@ const ServerInfo = () => {
           {maps.map((map, index) => (
             <MapCard key={index}>
               <MapImage src={map.img} alt={map.name} />
-              <MapName>{map.name}</MapName>
+              <MapName><Name>{map.name}
+              </Name></MapName>
             </MapCard>
           ))}
         </MapRotation>
