@@ -8,12 +8,9 @@ const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center; /* Centers items vertically */
   padding: 10px;
   z-index: 2;
   border-right: 1px solid rgba(95, 92, 92, 0.5);
-  display: flex;
-  // justify-content: flex-end;
 `;
 
 const Container = styled.div`
@@ -21,12 +18,9 @@ const Container = styled.div`
   height: 250px;
 `;
 
-
-
 const Icon = styled.a`
   width: 50px;
   height: 50px;
-  // margin: 4px 0;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -34,18 +28,18 @@ const Icon = styled.a`
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  text-decoration: none; /* Remove link underline */
+  text-decoration: none;
 
   img {
     width: 35px;
     height: 40px;
     object-fit: cover;
-    opacity: 0.5; /* Dull icon by default */
-    transition: opacity 0.3s ease; /* Smooth transition */
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
   }
 
   &:hover img {
-    opacity: 1; /* Brighten icon on hover */
+    opacity: 1;
   }
 
   span {
@@ -56,25 +50,22 @@ const Icon = styled.a`
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
-    opacity: 0; /* Hide tooltip by default */
-    transform: translateX(-10px); /* Initial position for smooth slide-in */
-    transition: all 0.3s ease; /* Smooth tooltip transition */
-    white-space: nowrap; /* Prevent tooltip wrapping */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
   }
 
   &:hover span {
-    opacity: 1; /* Show tooltip on hover */
-    transform: translateX(10px); /* Slide tooltip out */
+    opacity: 1;
+    transform: translateX(10px);
   }
-
-
 `;
+
 const Bottom = styled.div`
-margin-top: 40vh;
-justify-content : center;
-align-items: center;
-
-
+  margin-top: 40vh;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Button = styled.div`
@@ -82,7 +73,6 @@ const Button = styled.div`
   width: 20px;
   opacity: 0.5;
   padding: 15px;
-  
 `;
 
 const Sidebar = () => {
@@ -125,26 +115,22 @@ const Sidebar = () => {
     },
     {
       id: 7,
-      url: "    https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601aafab332f0ade9870b435_side-menu__news.svg",
+      url: "https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601aafab332f0ade9870b435_side-menu__news.svg",
       label: "Lock",
       link: "/lock",
     },
-
-
   ];
 
   return (
     <SidebarContainer>
       <Container>
-      {icons.map((icon) => (
-        <Icon key={icon.id} href={icon.link}>
-          <img src={icon.url} alt={icon.label} />
-          <span>{icon.label}</span>
-        </Icon>
-      ))}
-
+        {icons.map((icon) => (
+          <Icon key={icon.id} href={icon.link}>
+            <img src={icon.url} alt={icon.label} />
+            <span>{icon.label}</span>
+          </Icon>
+        ))}
       </Container>
-
       <Bottom>
         <Button>
           <img src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601aafabd71ff7186d1c97d5_side-menu__help.svg" />
@@ -153,9 +139,6 @@ const Sidebar = () => {
           <img src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601aafabc5fc83c1e7f50842_side-menu__quit.svg" />
         </Button>
       </Bottom>
-
-
-      
     </SidebarContainer>
   );
 };

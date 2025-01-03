@@ -10,7 +10,7 @@ const SidebarContainer = styled.div`
   align-items: center;
   height: 100vh;
   position: fixed;
-  right: 0; /* Aligns the sidebar to the right side */
+  right: 0; 
   padding-top: 20px;
   transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
   font-family: 'Rajdhani', sans-serif;

@@ -18,7 +18,7 @@ const BackgroundImage = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601abb0b487fc1bfc56a1c3b_menu__background-30blur.jpg"); /* Replace with your image URL */
+  background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601abb0b487fc1bfc56a1c3b_menu__background-30blur.jpg"); 
   background-position: center -20px; /* Shift the background 20px up */
   background-size: auto 160vh;
   z-index: 1;
