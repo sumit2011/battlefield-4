@@ -57,15 +57,16 @@ font-size: 4vh;
   font-weight: 600;
   line-height: 4vh;
   text-transform: uppercase;
-
 `;
+
 const Dashboard = () => {
   return (
     <DashboardContainer>
       <BackgroundImage />
       <Sidebar/>
       <MainContent>
-        <Navbar> &lt;&nbsp; MULTIPLAYER &nbsp; / &nbsp; SERVER BROWSER &nbsp;  / </Navbar>
+        <Navbar> <img src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab21dde67c22de2b6d61b_back.svg" loading="lazy" alt="" class="browser__breadcrumb-back"></img>
+           &nbsp; &nbsp; MULTIPLAYER &nbsp; / &nbsp; SERVER BROWSER &nbsp;  / </Navbar>
         <Title>SERVER INFO</Title>
         <br/> <br/> <br/>
         <ServerInfo />
